@@ -1,0 +1,49 @@
+openapi: 3.0.3                # Version de la spécification OpenAPI utilisée (ici 3.0.3)
+info:                          # Informations générales sur l'API
+  title: Service Menu API       # Nom de l'API
+  version: "1.0.0"             # Version de cette API (ici v1.0.0)
+servers:                        # Liste des serveurs qui hébergent l'API
+  - url: https://menu.example.com/api/v1  # URL de base pour toutes les routes v1
+paths:                          # Définit tous les endpoints (routes) de l'API
+  /menus:                       # Endpoint pour accéder à la liste des plats
+    get:                        # Méthode HTTP pour cette route (GET)
+      summary: Liste de tous les plats disponibles  # Description courte de l'opération
+      responses:                # Définit les réponses possibles pour cette requête
+        '200':                  # Code HTTP retourné en cas de succès
+          description: Liste des plats           # Description de la réponse
+          content:               # Type de contenu retourné
+            application/json:   # La réponse sera au format JSON
+              schema:            # Schéma de données attendu
+                type: array      # Ici, c'est un tableau
+                items:           # Définition des éléments du tableau
+                  $ref: '#/components/schemas/Plat' # Chaque élément est un objet "Plat" défini ci-dessous
+  /menus/{id}:                   # Endpoint pour accéder à un plat spécifique via son id
+    get:                         # Méthode HTTP GET
+      summary: Détails d’un plat # Description
+      parameters:                # Liste des paramètres attendus
+        - name: id               # Nom du paramètre
+          in: path               # Type de paramètre : "path" signifie qu'il fait partie de l'URL
+          required: true         # Ce paramètre est obligatoire
+          schema:                # Schéma du paramètre
+            type: string         # Type du paramètre : chaîne de caractères
+      responses:
+        '200':
+          description: Détail d’un plat
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Plat' # Réutilise le schéma Plat défini dans components
+components:                     # Partie où sont définis les objets réutilisables
+  schemas:                       # Schémas des objets JSON
+    Plat:                        # Objet représentant un plat
+      type: object               # C'est un objet JSON
+      properties:                # Définition des champs de l'objet
+        id:                      # Champ identifiant unique
+          type: string           # Type string
+        nom:                     # Nom du plat
+          type: string
+        prix:                    # Prix du plat
+          type: number           # Type numérique
+          format: float          # Format décimal
+        disponible:              # Disponibilité du plat
+          type: boolean          # Type booléen (true/false)

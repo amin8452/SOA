@@ -1,0 +1,32 @@
+.error {
+  background-color: #fff5f5;
+  border: 1px solid #ffcdd2;
+  color: #c62828;
+  border-radius: 24px;
+  padding: 48px 36px;
+  text-align: center;
+  display: grid;
+  gap: 12px;
+}
+
+.error h2 {
+  font-size: 1.4rem;
+  margin-bottom: 6px;
+}
+
+.error button {
+  justify-self: center;
+  background-color: #c62828;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.error button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(198, 40, 40, 0.3);
+}

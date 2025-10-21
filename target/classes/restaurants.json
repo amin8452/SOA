@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "resto1",
+    "plats": [
+      {
+        "id": 1,
+        "name": "Pizza Margherita",
+        "price": 8.5,
+        "available": true
+      },
+      {
+        "id": 2,
+        "name": "Lasagnes",
+        "price": 10.0,
+        "available": true
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "resto2",
+    "plats": [
+      {
+        "id": 3,
+        "name": "Sushi Saumon",
+        "price": 12.0,
+        "available": true
+      },
+      {
+        "id": 4,
+        "name": "Ramen",
+        "price": 11.0,
+        "available": false
+      }
+    ]
+  }
+]

@@ -1,0 +1,60 @@
+openapi: 3.0.3
+info:
+  title: Service Menu API
+  version: 1.0.0
+servers:
+- url: https://menu.example.com/api/v1
+paths:
+  /menus:
+    get:
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Plat'
+                type: array
+          description: Liste des plats
+      summary: Liste de tous les plats disponibles
+      x-accepts:
+      - application/json
+  /menus/{id}:
+    get:
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Plat'
+          description: Détail d’un plat
+      summary: Détails d’un plat
+      x-accepts:
+      - application/json
+components:
+  schemas:
+    Plat:
+      example:
+        prix: 0.8008282
+        id: id
+        nom: nom
+        disponible: true
+      properties:
+        id:
+          type: string
+        nom:
+          type: string
+        prix:
+          format: float
+          type: number
+        disponible:
+          type: boolean
+      type: object

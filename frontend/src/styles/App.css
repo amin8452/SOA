@@ -1,0 +1,8 @@
+@import '../components/Header.css';
+@import '../components/RestaurantTabs.css';
+@import '../components/DishGallery.css';
+@import '../components/DishCard.css';
+@import '../components/OrderModal.css';
+@import '../components/LoadingState.css';
+@import '../components/ErrorState.css';
+@import '../components/FeedbackToast.css';

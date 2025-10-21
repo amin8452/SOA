@@ -1,0 +1,8 @@
+com\speed_liv\menu\api\MenusApi.class
+org\openapitools\OpenApiGeneratorApplication.class
+com\speed_liv\menu\api\ApiUtil.class
+org\openapitools\RFC3339DateFormat.class
+com\speed_liv\menu\model\Plat.class
+org\openapitools\configuration\SpringDocConfiguration.class
+com\speed_liv\menu\api\MenusApiController.class
+org\openapitools\configuration\HomeController.class

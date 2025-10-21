@@ -1,0 +1,22 @@
+.loading {
+  display: grid;
+  justify-items: center;
+  gap: 16px;
+  padding: 80px 20px;
+  color: #3a4a5b;
+}
+
+.loading__spinner {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 5px solid rgba(12, 186, 186, 0.2);
+  border-top-color: #0cbaba;
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
