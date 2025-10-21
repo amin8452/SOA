@@ -4,7 +4,7 @@ import com.speed_liv.menu.model.Plat;
 import java.util.List;
 import java.util.Optional;
 import javax.annotation.Generated;
-import org.openapitools.services.MenuService;
+import com.speed_liv.menu.services.MenuService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
